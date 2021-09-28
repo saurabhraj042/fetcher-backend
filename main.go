@@ -65,7 +65,7 @@ func HomePage(w http.ResponseWriter, r *http.Request, notices []Notice){
 
 func main(){
 	port := os.Getenv("PORT")
-	server := &http.Server{Addr: port}
+	server := &http.Server{Addr: ":" + port}
 	notices := make([]Notice, 0)
 
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
