@@ -69,6 +69,9 @@ func main(){
 	notices := make([]Notice, 0)
 
 	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		rw.Header().Set("Access-Control-Allow-Origin", "*")
+		rw.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+		
 		HomePage(rw, r, notices)
 	})
 
